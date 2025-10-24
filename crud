@@ -1,0 +1,29 @@
+show dbs
+
+use fsd
+
+show collections
+
+db.createCollection("student")
+
+db.student.insertOne({name:"aaa",age:10,course:"cs"})
+
+db.student.insertMany([{name:"abc",age:12,course:"cs"},{name:"xyz",age:14,course:"me"},{name:"asd",age:18,course:"ec"}])
+
+db.student.findOne({name:"xyz"}) 
+
+db.student.updateOne({name:"xyz"},{$set:{age:48}}) 
+
+db.student.find() 
+
+db.student.updateMany({course:"cs"},{$set:{course:"computer science"}})
+👉 Updates all documents where course is "cs".
+
+db.student.deleteOne({name:"xyz"})
+
+db.student.deleteMany({age:{$lt:18}})
+👉 Deletes all documents where age is less than 18.
+
+db.student.find()
+
+db.student.find()
